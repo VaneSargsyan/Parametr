@@ -1,0 +1,154 @@
+.title {
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 700;
+    font-family: Noto Serif Armenian, Inter, serif;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+
+
+}
+
+/* .main-section {
+    padding: 6rem 2rem;
+} */
+
+.title span {
+    color: hsl(var(--brand-tint));
+}
+
+.main-desc {
+    font-size: 1.125rem;
+    line-height: 1.625;
+    font-family: Noto Serif;
+    max-width: 560px;
+    color: rgb(255 255 255 / 0.75);
+    margin-bottom: 2.5rem;
+}
+
+.advice-button {
+    color: var(--white-primary);
+    border: 1px solid transparent;
+    width: 320px;
+    height: 60px;
+    border-radius: var(--corner-radius-s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    background-color: rgb(37, 99, 235);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.advice-button:hover {
+    background-color: #27354b;
+    transform: scale(1.05);
+    color: rgb(211, 226, 243);
+    font-weight: 800;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+
+}
+
+.projects-button {
+    color: var(--white-primary);
+    border: 1px solid white;
+    width: 320px;
+    height: 60px;
+    border-radius: var(--corner-radius-s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.projects-button:hover {
+    transform: scale(1.05);
+    background-color: rgba(237, 234, 234, 0.471);
+    color: #27354b;
+    font-weight: 800;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.293);
+    max-width: 720px;
+}
+
+.values {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.valueCard {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+.valueCard:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    border-color: rgb(67, 169, 228);
+    transition: 0.3s ease;
+}
+
+.valueCard h3 {
+    color: rgb(67, 169, 228);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+
+.valueCard p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+    .main-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 100%;
+    }
+
+    .advice-button,
+    .projects-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .values {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .valueCard {
+        padding: 1.2rem;
+    }
+}

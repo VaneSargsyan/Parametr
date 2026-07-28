@@ -1,0 +1,23 @@
+:root {
+    /* fonts*/
+    --main-font: sans-serif;
+    /*colors*/
+
+    --white-primary: #fff;
+    --black-primary: #000;
+    --blue-primary: #3186e9;
+    --brand-tint: 214 95% 93%;
+    --background: 210 40% 98%;
+
+
+
+    /*radius */
+
+    --corner-radius-xs: 10px;
+    --corner-radius-s: 15px;
+    --corner-radius: 0.875rem;
+
+    /*gradients*/
+    --blue-gradient: linear-gradient(135deg, oklch(62% .17 255), oklch(50% .18 260));
+
+}

@@ -1,0 +1,267 @@
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 6rem;
+    min-height: 80vh;
+    background-color: rgb(242, 244, 247);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projects-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: Noto Serif Armenian, Inter, serif;
+    border: 1px solid rgb(49, 80, 153);
+    border-radius: var(--corner-radius-s);
+    max-width: 450px;
+    padding: 1rem;
+    background: rgba(37, 99, 235, 0.12);
+    color: rgb(52, 73, 123);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.projects-title:hover {
+    transform: translateX(8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+
+}
+
+.projects-desc {
+    font-size: 1.2rem;
+    color: rgb(49, 80, 153);
+    font-family:Noto Serif Armenian, Inter, serif ;
+    letter-spacing: 2;
+    font-weight: 400;
+}
+
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin:30px 0 50px;
+}
+
+.filterBtn{
+    padding:12px 22px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#2563eb;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.filterBtn:hover{
+    transform:translateY(-3px);
+    background:#2563eb;
+    color:white;
+}
+
+.active{
+    background:#2563eb;
+    color:white;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    height:300px;
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(40px);
+    animation:show .7s forwards;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.15));
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:28px;
+    color:white;
+    transition:.4s;
+}
+
+.overlay span{
+    color:#8bb7ff;
+    margin-bottom:10px;
+    font-size:.9rem;
+}
+
+.overlay h3{
+    font-size:1.4rem;
+}
+
+.card:hover .overlay{
+    background:linear-gradient(to top,
+    rgba(16,54,122,.95),
+    rgba(16,54,122,.2));
+}
+
+@keyframes show{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .projects-section{
+        padding:3rem;
+    }
+
+    .projects-title{
+        font-size:2.4rem;
+        max-width:380px;
+    }
+
+    .projects-desc{
+        font-size:1.05rem;
+    }
+
+    .grid{
+        gap:22px;
+    }
+
+    .card{
+        height:260px;
+    }
+
+    .overlay h3{
+        font-size:1.2rem;
+    }
+}
+
+
+
+@media (max-width:768px){
+
+    .projects-section{
+        padding:2rem 1.25rem;
+    }
+
+    .projects-header{
+        gap:1rem;
+        text-align:center;
+        align-items:center;
+    }
+
+    .projects-title{
+        width:100%;
+        max-width:none;
+        font-size:2rem;
+        text-align:center;
+    }
+
+    .projects-desc{
+        font-size:1rem;
+        max-width:600px;
+    }
+
+    .filters{
+        justify-content:center;
+        gap:10px;
+        margin:25px 0 35px;
+    }
+
+    .filterBtn{
+        padding:10px 18px;
+        font-size:.9rem;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .card{
+        height:260px;
+    }
+
+    .overlay{
+        padding:22px;
+    }
+
+    .overlay h3{
+        font-size:1.2rem;
+    }
+}
+
+
+@media (max-width:480px){
+
+    .projects-section{
+        padding:1.5rem 1rem;
+    }
+
+    .projects-title{
+        font-size:1.7rem;
+        padding:.8rem;
+    }
+
+    .projects-desc{
+        font-size:.95rem;
+    }
+
+    .filters{
+        gap:8px;
+    }
+
+    .filterBtn{
+        width:100%;
+        padding:12px;
+        font-size:.9rem;
+    }
+
+    .card{
+        height:220px;
+    }
+
+    .overlay{
+        padding:18px;
+    }
+
+    .overlay h3{
+        font-size:1.05rem;
+    }
+
+    .overlay span{
+        font-size:.8rem;
+    }
+}

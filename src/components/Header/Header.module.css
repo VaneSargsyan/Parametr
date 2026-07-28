@@ -1,0 +1,38 @@
+.header{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-self: space-between; */
+    
+}
+.header-top{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+/* .logo{
+    border: 1px solid oklch(0.92 0.01 250);
+    background: var(--blue-gradient);
+    border-radius: var(--corner-radius);
+    padding:0.875rem;
+    align-items: center;
+    color: var(--white-primary);
+} */
+.logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    background-color: transparent;
+    display: block;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+.header-title{
+    font-size: 1.875rem;
+    color: var(--white-primary);
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing:2px;
+}
