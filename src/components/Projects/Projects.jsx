@@ -16,31 +16,31 @@ const projects = [
         id: 1,
         title: "Առանձնատան կառուցապատում",
         category: "Կառուցապատում",
-        image: "/public/Images/Construction.avif"
+        image: "/Images/Construction.avif"
     },
     {
         id: 2,
         title: "Հողամասի չափագրում",
         category: "Գեոդեզիա",
-        image: "/public/Images/Geodesy.jpeg",
+        image: "/Images/Geodesy.jpeg",
     },
     {
         id: 3,
         title: "Ժամանակակից խոհանոց",
         category: "Կահույք",
-        image: "/public/Images/Furniture.jpeg",
+        image: "/Images/Furniture.jpeg",
     },
     {
         id: 4,
         title: "Բնակելի տան նախագիծ",
         category: "Նախագծում",
-        image: "/public/Images/Naxagic.jpeg",
+        image: "/Images/Naxagic.jpeg",
     },
     {
         id: 5,
         title: "PVC դռներ և պատուհաններ",
         category: "Դռներ և պատուհաններ",
-        image: "/public/Images/DoorWindow.jpeg",
+        image: "/Images/DoorWindow.jpeg",
     },
 ];
 
