@@ -265,3 +265,13 @@
         font-size:.8rem;
     }
 }
+.card:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card { animation: none; opacity: 1; transform: none; }
+    .card img, .overlay, .filterBtn { transition: none; }
+    .card:hover img { transform: none; }
+}

@@ -1,5 +1,7 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { projects } from '../../data/projects';
 import styles from './Projects.module.css'
 
 const categories = [
@@ -10,43 +12,6 @@ const categories = [
     "Կահույք",
     "Դռներ և պատուհաններ",
 ];
-
-const projects = [
-    {
-        id: 1,
-        title: "Առանձնատան կառուցապատում",
-        category: "Կառուցապատում",
-        image: "/Images/Construction.avif"
-    },
-    {
-        id: 2,
-        title: "Հողամասի չափագրում",
-        category: "Գեոդեզիա",
-        image: "/Images/Geodesy.jpeg",
-    },
-    {
-        id: 3,
-        title: "Ժամանակակից խոհանոց",
-        category: "Կահույք",
-        image: "/Images/Furniture.jpeg",
-    },
-    {
-        id: 4,
-        title: "Բնակելի տան նախագիծ",
-        category: "Նախագծում",
-        image: "/Images/Naxagic.jpeg",
-    },
-    {
-        id: 5,
-        title: "PVC դռներ և պատուհաններ",
-        category: "Դռներ և պատուհաններ",
-        image: "/Images/DoorWindow.jpeg",
-    },
-];
-
-
-
-
 
 export const Projects = () => {
     const [active, setActive] = useState("Բոլորը");
@@ -77,7 +42,8 @@ export const Projects = () => {
 
       <div className={styles.grid}>
         {filtered.map((project, index) => (
-          <div
+          <Link
+            to={`/projects/${project.slug}`}
             className={styles.card}
             key={project.id}
             style={{
@@ -90,7 +56,7 @@ export const Projects = () => {
               <span>{project.category}</span>
               <h3>{project.title}</h3>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
