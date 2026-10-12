@@ -1,57 +1,54 @@
-export const projects = [
-    {
-        id: 1,
-        slug: "private-house-construction",
-        description: "Առանձնատան կառուցապատում՝ հարմարավետ և գործնական բնակելի միջավայրի համար։",
-        longDescription: "Նախագիծը ներկայացնում է առանձնատան կառուցապատման մոտեցում, որտեղ կարևոր են տարածքի ճիշտ կազմակերպումը, աշխատանքների հաջորդականությունն ու որակը։ Ուշադրության կենտրոնում են բնակիչների առօրյա հարմարավետությունը և տան ներդաշնակ կապը շրջակա միջավայրի հետ։",
-        features: ["Տարածքի արդյունավետ կազմակերպում", "Շինարարական աշխատանքների պլանավորում", "Նյութերի նպատակային ընտրություն", "Հարմարավետ բնակելի միջավայր"],
-        gallery: ["/Images/Construction.avif"],
-        title: "Առանձնատան կառուցապատում",
-        category: "Կառուցապատում",
-        image: "/Images/Construction.avif"
-    },
-    {
-        id: 2,
-        slug: "land-survey",
-        description: "Հողամասի չափագրում՝ տարածքի մասին հստակ պատկերացում կազմելու համար։",
-        longDescription: "Հողամասի չափագրումը նախագծման և կառուցապատման կարևոր նախապատրաստական փուլերից է։ Այն օգնում է հասկանալ տարածքի սահմանները, ձևն ու առանձնահատկությունները և ունենալ ելակետային տվյալներ հետագա աշխատանքների պլանավորման համար։",
-        features: ["Հողամասի սահմանների ուսումնասիրություն", "Տարածքի չափագրում", "Ռելիեֆի առանձնահատկությունների դիտարկում", "Նախագծման ելակետային տվյալներ"],
-        gallery: ["/Images/Geodesy.jpeg"],
-        title: "Հողամասի չափագրում",
-        category: "Գեոդեզիա",
-        image: "/Images/Geodesy.jpeg",
-    },
-    {
-        id: 3,
-        slug: "modern-kitchen",
-        description: "Ժամանակակից խոհանոց՝ զուսպ ձևավորմամբ և մտածված դասավորությամբ։",
-        longDescription: "Խոհանոցի ձևավորման հիմքում առօրյա օգտագործման հարմարավետությունն է։ Աշխատանքային մակերեսները, պահեստավորման հատվածներն ու կահույքի դասավորությունը դիտարկվում են միասին՝ ստեղծելով ամբողջական և ներդաշնակ տարածք։",
-        features: ["Աշխատանքային գոտիների հարմար դասավորություն", "Պահեստավորման մտածված լուծումներ", "Զուսպ գույներ և հստակ գծեր", "Տարածքին համապատասխան կահույք"],
-        gallery: ["/Images/Furniture.jpeg"],
-        title: "Ժամանակակից խոհանոց",
-        category: "Կահույք",
-        image: "/Images/Furniture.jpeg",
-    },
-    {
-        id: 4,
-        slug: "residential-house-design",
-        description: "Բնակելի տան նախագիծ՝ գործառնական և ներդաշնակ տարածքներով։",
-        longDescription: "Բնակելի տան նախագծման ընթացքում ճարտարապետական տեսքն ու ներքին դասավորությունը լրացնում են միմյանց։ Մոտեցումը կարևորում է սենյակների կապը, բնական լուսավորությունը և տարածքի օգտագործումը՝ ընտանիքի առօրյա կարիքներին համապատասխան։",
-        features: ["Գործառնական հատակագծային լուծումներ", "Բնական լուսավորության կարևորում", "Ներքին և արտաքին տարածքների կապ", "Միասնական ճարտարապետական մոտեցում"],
-        gallery: ["/Images/Naxagic.jpeg"],
-        title: "Բնակելի տան նախագիծ",
-        category: "Նախագծում",
-        image: "/Images/Naxagic.jpeg",
-    },
-    {
-        id: 5,
-        slug: "pvc-doors-windows",
-        description: "PVC դռներ և պատուհաններ՝ բնակելի տարածքի հարմարավետությունն ամբողջացնելու համար։",
-        longDescription: "Դռներն ու պատուհանները շենքի արտաքին տեսքի և ներքին միջավայրի կարևոր մասն են։ Այս ուղղության աշխատանքներում ուշադրություն է դարձվում բացվածքների չափերին, համապատասխան լուծումների ընտրությանը և ընդհանուր ձևավորման հետ համադրությանը։",
-        features: ["Բացվածքներին համապատասխան չափեր", "Դռների և պատուհանների ընտրություն", "Ջերմային հարմարավետության կարևորում", "Շենքի տեսքի հետ ներդաշնակություն"],
-        gallery: ["/Images/DoorWindow.jpeg"],
-        title: "PVC դռներ և պատուհաններ",
-        category: "Դռներ և պատուհաններ",
-        image: "/Images/DoorWindow.jpeg",
-    },
+import { contentFields } from '../i18n/content';
+
+const records = [
+  {
+    "id": 1,
+    "slug": "private-house-construction",
+    "image": "/Images/Construction.avif",
+    "gallery": [
+      "/Images/Construction.avif"
+    ],
+    "categoryId": "construction"
+  },
+  {
+    "id": 2,
+    "slug": "land-survey",
+    "image": "/Images/Geodesy.jpeg",
+    "gallery": [
+      "/Images/Geodesy.jpeg"
+    ],
+    "categoryId": "surveying"
+  },
+  {
+    "id": 3,
+    "slug": "modern-kitchen",
+    "image": "/Images/Furniture.jpeg",
+    "gallery": [
+      "/Images/Furniture.jpeg"
+    ],
+    "categoryId": "furniture"
+  },
+  {
+    "id": 4,
+    "slug": "residential-house-design",
+    "image": "/Images/Naxagic.jpeg",
+    "gallery": [
+      "/Images/Naxagic.jpeg"
+    ],
+    "categoryId": "design"
+  },
+  {
+    "id": 5,
+    "slug": "pvc-doors-windows",
+    "image": "/Images/DoorWindow.jpeg",
+    "gallery": [
+      "/Images/DoorWindow.jpeg"
+    ],
+    "categoryId": "doorsWindows"
+  }
 ];
+
+export const projects = records.map(project => ({
+    ...project,
+    ...contentFields('projects', project.slug, ['title', 'description', 'longDescription', 'features']),
+}));

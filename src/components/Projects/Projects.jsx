@@ -1,48 +1,44 @@
+import { useTranslation } from 'react-i18next';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { categories } from '../../data/categories';
+import { localized } from '../../i18n/content';
 import { projects } from '../../data/projects';
 import styles from './Projects.module.css'
 
-const categories = [
-    "Բոլորը",
-    "Կառուցապատում",
-    "Գեոդեզիա",
-    "Նախագծում",
-    "Կահույք",
-    "Դռներ և պատուհաններ",
-];
-
 export const Projects = () => {
-    const [active, setActive] = useState("Բոլորը");
+    const { t, i18n } = useTranslation();
+    const [active, setActive] = useState('all');
     const filtered =
-        active === "Բոլորը"
+        active === 'all'
             ? projects
-            : projects.filter((item) => item.category === active);
+            : projects.filter((item) => item.categoryId === active);
     return (
         <section id='projects' className={styles['projects-section']}>
             <div className={styles["projects-header"]}>
-                <h2 className={styles['projects-title']}>Մեր նախագծերը</h2>
-                <p className={styles['projects-desc']}>Յուրաքանչյուր նախագիծ արտացոլում է մեր փորձը, ճշգրտությունն ու պատասխանատվությունը։</p>
+                <h2 className={styles['projects-title']}>{t('projects.title')}</h2>
+                <p className={styles['projects-desc']}>{t('projects.description')}</p>
             </div>
 
         <div className={styles.filters}>
-        {categories.map((item) => (
+        {[{ id: 'all' }, ...categories].map((item) => (
           <button
             type="button"
-            aria-pressed={active === item}
-            key={item}
+            aria-pressed={active === item.id}
+            key={item.id}
             className={`${styles.filterBtn} ${
-              active === item ? styles.active : ""
+              active === item.id ? styles.active : ""
             }`}
-            onClick={() => setActive(item)}
+            onClick={() => setActive(item.id)}
           >
-            {item}
+            {item.id === 'all' ? t('projects.all') : localized(item.title, i18n.resolvedLanguage)}
           </button>
         ))}
       </div>
 
       <div className={styles.grid} key={active}>
+        {filtered.length === 0 && <p role="status">{t('projects.empty')}</p>}
         {filtered.map((project, index) => (
           <Link
             viewTransition={!window.matchMedia('(prefers-reduced-motion: reduce)').matches}
@@ -51,11 +47,11 @@ export const Projects = () => {
             key={project.id}
             style={{ animationDelay: `${index * 80}ms` }}
           >
-            <div className={styles.media}><img loading="lazy" decoding="async" src={project.image} alt={project.title} /></div>
+            <div className={styles.media}><img loading="lazy" decoding="async" src={project.image} alt={localized(project.title, i18n.resolvedLanguage)} /></div>
 
             <div className={styles.overlay}>
-              <span>{project.category}</span>
-              <h3>{project.title}</h3>
+              <span>{localized(categories.find(category => category.id === project.categoryId)?.title, i18n.resolvedLanguage)}</span>
+              <h3>{localized(project.title, i18n.resolvedLanguage)}</h3>
             </div>
           </Link>
         ))}

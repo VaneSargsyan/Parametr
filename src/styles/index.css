@@ -26,3 +26,8 @@ section[id], #main { scroll-margin-top: 110px; }
         }
     }
 }
+
+/* Longer translated labels may wrap without widening grid tracks. */
+:where(h1, h2, h3, p, a, label) { overflow-wrap: anywhere; }
+
+@media(max-width: 480px) { section[id], #main { scroll-margin-top: 150px; } }

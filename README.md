@@ -21,18 +21,20 @@ pnpm preview
 ```
 
 The build writes `dist/`. Preview serves the build locally, not as a production server.
-There is currently no automated test suite or test script.
+Run `pnpm test:i18n` for translation coverage, route rendering, language persistence,
+metadata and form-validation checks. Desktop/mobile interaction and visual checks
+still require a browser.
 
 ## Existing functionality
 
-- Armenian homepage with services, workflow, projects, company and contact sections.
+- Armenian (default), English and Russian public pages, including services, workflow,
+  projects, company and contact sections.
 - Project category filtering and `/projects/:slug` detail pages with galleries.
 - Telephone and email contact links.
 
 The contact form is not connected to a backend. Submitting it does not send or
 store data; it displays a message directing customers to the existing contact links.
-Supabase, staff authentication, multilingual support and transactional email are
-planned and are not implemented.
+Supabase, staff authentication and transactional email are planned and are not implemented.
 
 ## Environment and deployment
 
@@ -51,3 +53,22 @@ The clean starting checkpoint is `00e324a` (`Add project detail pages`). Phase 1
 preserves content and styling while improving lifecycle cleanup, accessibility,
 form semantics and local configuration. Business claims and project authenticity
 still require company review before production launch.
+
+## Localization
+
+`src/i18n/locales/{hy,en,ru}.json` contains matching semantic UI keys and a
+`content` section for editable entities. `src/data/projects.js`, `services.js` and
+`categories.js` expose stable IDs and multilingual fields such as `title.hy`.
+Use `localized(field, i18n.resolvedLanguage)` for content and `useTranslation()`
+for UI. Add every key to all three locale files; `pnpm test:i18n` checks parity,
+interpolation variables, source keys and rendered routes.
+
+First-time visitors receive Armenian regardless of browser language. HY/EN/RU
+buttons save the selection under `parametr.language` in localStorage. Blocked or
+invalid storage falls back to Armenian. Routes stay `/` and `/projects/:slug`;
+there are no language URL prefixes. Route metadata and HTML language update on
+selection. Metadata is client-rendered; separate indexable language URLs and
+prerendering remain future SEO work.
+
+The contact form uses localized inline validation and does not send or save data.
+Language changes preserve the selected project filter and entered form values.

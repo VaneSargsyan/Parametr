@@ -1,0 +1,244 @@
+{
+  "brand": {
+    "name": "Parametr",
+    "wordmark": "PARAMETR",
+    "homeLabel": "Parametr · Home",
+    "tagline": "From concept to completion"
+  },
+  "nav": {
+    "main": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About us",
+    "contact": "Contact us",
+    "skip": "Skip to content",
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "actions": {
+    "request": "Discuss your project",
+    "work": "Explore our work",
+    "contact": "Get in touch"
+  },
+  "hero": {
+    "eyebrow": "Surveying · Design · Construction",
+    "title": "From concept to",
+    "titleAccent": "completion",
+    "description": "Surveying, design, construction, renovation, furniture and integrated building solutions — all from one team.",
+    "imageAlt": "Construction work",
+    "caption": "Precision at every stage"
+  },
+  "values": {
+    "experience": {
+      "title": "Experience",
+      "description": "A professional approach to every project"
+    },
+    "precision": {
+      "title": "Precision",
+      "description": "Modern surveying and design solutions"
+    },
+    "innovation": {
+      "title": "Innovation",
+      "description": "Applying advanced technologies"
+    },
+    "reliability": {
+      "title": "Reliability",
+      "description": "Responsibility at every stage"
+    }
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "Complete solutions from one team",
+    "individual": "100% tailored approach",
+    "quality": "Quality control at every stage",
+    "team": "An experienced professional team",
+    "partner": "A dependable partner",
+    "more": "Contact us to learn more"
+  },
+  "projects": {
+    "title": "Our projects",
+    "description": "Every project reflects our experience, precision and responsibility.",
+    "all": "All",
+    "empty": "No projects in this category."
+  },
+  "project": {
+    "back": "Back to projects",
+    "navigation": "Project navigation",
+    "notFound": "Project not found",
+    "notFoundDescription": "There is no project at this address. Explore our other projects.",
+    "eyebrow": "Parametr · Projects",
+    "approach": "Concept and approach",
+    "about": "About the project",
+    "details": "Details",
+    "features": "Key features",
+    "images": "Images",
+    "gallery": "Project gallery",
+    "openImage": "{{title}}: open image {{number}} in a new tab",
+    "imageAlt": "{{title}}: image {{number}}",
+    "next": "Your next step",
+    "discuss": "Let’s discuss your project"
+  },
+  "about": {
+    "title": "Your vision is our professional commitment.",
+    "description": "Surveying, design, construction and integrated building solutions, delivered with precision, responsibility and a modern approach.",
+    "imageAlt": "Architectural design"
+  },
+  "process": {
+    "eyebrow": "Our process",
+    "title": "How we work",
+    "description": "Six clear stages to bring your project to completion.",
+    "steps": {
+      "inquiry": {
+        "title": "Inquiry",
+        "description": "You submit an inquiry. We discuss your project, requirements and schedule."
+      },
+      "survey": {
+        "title": "Surveying",
+        "description": "Geodetic and architectural surveys with accurate measurements of the site or building."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Architectural and engineering design, including utilities and structural solutions."
+      },
+      "estimate": {
+        "title": "Cost estimate",
+        "description": "A detailed cost estimate, project schedule and contract."
+      },
+      "execution": {
+        "title": "Execution",
+        "description": "Construction, renovation or furnishing according to the approved design."
+      },
+      "handover": {
+        "title": "Handover",
+        "description": "Project handover, documentation and warranty terms."
+      }
+    }
+  },
+  "contact": {
+    "title": "Ready to start",
+    "titleAccent": "your project?",
+    "description": "Tell us about your idea or project. Our specialists will contact you within one business day to suggest the best solution.",
+    "addressRegion": "Kotayk Province, Kanakeravan village,",
+    "addressStreet": "33 Anania Shirakatsi Street",
+    "notice": "Online inquiries are not available yet. Please call or email us to get in touch.",
+    "unsent": "Your inquiry has not been sent. Please contact us using the phone number or email address shown."
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email (optional)",
+    "message": "Your message",
+    "required": "Please complete this field.",
+    "invalidEmail": "Please enter a valid email address."
+  },
+  "footer": {
+    "description": "Surveying, design, construction and integrated building solutions.",
+    "navigation": "Footer navigation",
+    "explore": "Explore",
+    "top": "Back to top"
+  },
+  "errors": {
+    "title": "Page not found",
+    "description": "There is no page at this address. Return to the homepage.",
+    "unexpected": "This page could not be displayed. Please try again."
+  },
+  "seo": {
+    "title": "Parametr · From concept to completion",
+    "description": "Parametr: surveying, architectural and engineering design, construction, renovation, furniture and integrated building solutions."
+  },
+  "content": {
+    "projects": {
+      "private-house-construction": {
+        "title": "Private house construction",
+        "description": "Construction of a private house for a comfortable, practical living environment.",
+        "longDescription": "This project presents an approach to private house construction focused on effective space planning, the sequence of works and quality. Everyday comfort and a harmonious connection between the house and its surroundings are central to the approach.",
+        "features": [
+          "Efficient space planning",
+          "Planning construction work",
+          "Purposeful material selection",
+          "A comfortable living environment"
+        ]
+      },
+      "land-survey": {
+        "title": "Land survey",
+        "description": "A land survey to establish a clear understanding of the site.",
+        "longDescription": "A land survey is an important preparatory stage in design and construction. It helps establish the boundaries, shape and characteristics of the site and provides baseline information for planning subsequent work.",
+        "features": [
+          "Review of site boundaries",
+          "Site measurements",
+          "Assessment of terrain characteristics",
+          "Baseline data for design"
+        ]
+      },
+      "modern-kitchen": {
+        "title": "Modern kitchen",
+        "description": "A modern kitchen with understated design and a considered layout.",
+        "longDescription": "Everyday usability is at the heart of the kitchen design. Work surfaces, storage areas and furniture layout are considered together to create a cohesive, harmonious space.",
+        "features": [
+          "Convenient arrangement of work zones",
+          "Thoughtful storage solutions",
+          "Understated colours and clean lines",
+          "Furniture suited to the space"
+        ]
+      },
+      "residential-house-design": {
+        "title": "Residential house design",
+        "description": "A residential house design with functional, harmonious spaces.",
+        "longDescription": "In residential house design, the architectural appearance and interior layout complement one another. The approach prioritises room connections, natural light and the use of space to suit the family’s everyday needs.",
+        "features": [
+          "Functional floor plan solutions",
+          "Attention to natural light",
+          "Connection between indoor and outdoor spaces",
+          "A consistent architectural approach"
+        ]
+      },
+      "pvc-doors-windows": {
+        "title": "PVC doors and windows",
+        "description": "PVC doors and windows to complete the comfort of a home.",
+        "longDescription": "Doors and windows are an important part of a building’s appearance and interior environment. Work in this area considers opening dimensions, the selection of suitable solutions and their coordination with the overall design.",
+        "features": [
+          "Dimensions suited to the openings",
+          "Selection of doors and windows",
+          "Attention to thermal comfort",
+          "Harmony with the building’s appearance"
+        ]
+      }
+    },
+    "categories": {
+      "construction": "Construction",
+      "surveying": "Surveying",
+      "design": "Design",
+      "furniture": "Furniture",
+      "doorsWindows": "Doors and windows"
+    },
+    "services": {
+      "surveying": {
+        "title": "Surveying and measurements",
+        "description": "Accurate measurements and land surveys."
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Delivery of residential and commercial projects."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Architectural and engineering design."
+      },
+      "furniture": {
+        "title": "Furniture",
+        "description": "Production of custom-designed furniture."
+      },
+      "doorsWindows": {
+        "title": "Doors and windows",
+        "description": "PVC and interior door solutions."
+      },
+      "realEstate": {
+        "title": "Real estate",
+        "description": "Valuation, consultancy and property services."
+      }
+    }
+  }
+}

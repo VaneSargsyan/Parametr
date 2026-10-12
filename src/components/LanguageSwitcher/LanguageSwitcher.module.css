@@ -1,0 +1,8 @@
+.switcher { display: flex; gap: .15rem; flex-shrink: 0; }
+.switcher button { color: #b6c9e1; font: .68rem system-ui, sans-serif; padding: .6rem .35rem; min-height: 40px; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.switcher button:hover { color: white; }
+.switcher button[aria-pressed='true'] { color: white; border-bottom-color: var(--blue-light); }
+@media(max-width: 400px) { .switcher button { padding-inline: .25rem; } }
+
+.switcher[data-tone="light"] button { color: var(--muted); }
+.switcher[data-tone="light"] button:hover, .switcher[data-tone="light"] button[aria-pressed="true"] { color: var(--blue-primary); border-bottom-color: var(--blue-primary); }

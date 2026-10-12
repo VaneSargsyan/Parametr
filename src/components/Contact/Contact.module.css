@@ -22,3 +22,5 @@
 .right-side button:hover { background: var(--blue-primary); }
 .right-side [role='status'] { font-size: .75rem; margin-top: 1rem; color: #385578; }
 @media(max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+
+.fieldError { color: #9c2525; font-size: .72rem; margin: -.6rem 0 1rem; }

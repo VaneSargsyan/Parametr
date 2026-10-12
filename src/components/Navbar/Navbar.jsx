@@ -1,30 +1,34 @@
+import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { Header } from '../Header';
 import styles from './Navbar.module.css';
-const links = [['main', 'Գլխավոր'], ['services', 'Ծառայություններ'], ['projects', 'Նախագծեր'], ['about', 'Մեր մասին'], ['contact', 'Կապ մեզ հետ']];
+const links = ['main', 'services', 'projects', 'about', 'contact'];
 export const Navbar = () => {
+    const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const toggleRef = useRef(null);
     return (
         <header className={styles.header}>
-            <a className="skip-link" href="#main">Անցնել բովանդակությանը</a>
+            <a className="skip-link" href="#main">{t('nav.skip')}</a>
             <div className={styles.inner}>
                 <Header />
-                <nav aria-label="Գլխավոր" onKeyDown={(event) => {
+                <nav aria-label={t('nav.main')} onKeyDown={(event) => {
                     if (event.key === 'Escape' && open) {
                         setOpen(false);
                         toggleRef.current?.focus();
                     }
                 }}>
                     <button ref={toggleRef} className={styles.burger} type="button"
-                        aria-label={open ? 'Փակել ընտրացանկը' : 'Բացել ընտրացանկը'}
+                        aria-label={t(open ? 'nav.close' : 'nav.open')}
                         aria-expanded={open} aria-controls="primary-navigation"
                         onClick={() => setOpen(value => !value)}>{open ? '✕' : '☰'}</button>
                     <ul id="primary-navigation" className={`${styles.links} ${open ? styles.open : ''}`}>
-                        {links.map(([id, label]) => <li key={id}><a href={`#${id}`} onClick={() => setOpen(false)}>{label}</a></li>)}
+                        {links.map(id => <li key={id}><a href={`#${id}`} onClick={() => setOpen(false)}>{t(`nav.${id}`)}</a></li>)}
                     </ul>
                 </nav>
-                <a className={styles.cta} href="#contact">Ներկայացնել հայտ <span aria-hidden="true">↗</span></a>
+                <LanguageSwitcher />
+                <a className={styles.cta} href="#contact">{t('actions.request')} <span aria-hidden="true">↗</span></a>
             </div>
         </header>
     );

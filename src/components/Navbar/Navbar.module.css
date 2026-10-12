@@ -8,10 +8,18 @@
 .cta:hover { background: #ffffff10; }
 .burger { display: none; color: white; width: 44px; height: 44px; font-size: 1.4rem; }
 @media(max-width: 1100px) { .cta { display: none; } }
-@media(max-width: 800px) {
+@media(max-width: 1000px) {
     .inner { padding-block: .8rem; }
     .burger { display: block; }
     .links { position: absolute; inset: 100% 0 auto; display: none; background: var(--navy-deep); padding: 1.5rem var(--gutter) 2rem; border-bottom: 1px solid #ffffff30; }
     .open { display: flex; flex-direction: column; align-items: stretch; gap: .2rem; }
     .links a { display: block; padding: .8rem 0; font-size: 1rem; border-bottom: 1px solid #ffffff15; }
+}
+
+@media(max-width: 1000px) { .inner { gap: .6rem; } .inner nav { margin-left: auto; order: 2; } }
+
+@media(max-width: 480px) {
+    .inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: .25rem; }
+    .inner nav { grid-column: 2; grid-row: 1; }
+    .inner > [role='group'] { grid-column: 1 / -1; grid-row: 2; justify-self: end; }
 }

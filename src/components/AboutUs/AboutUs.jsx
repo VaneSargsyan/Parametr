@@ -1,25 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import styles from './AboutUs.module.css'
 export const AboutUs = () => {
+    const { t } = useTranslation();
     return (
 
         <section id="about" className={styles.about}>
             <div className={styles.container}>
                 <div className={styles.textSide}>
-                    <span className={styles.tag}>Մեր մասին</span>
+                    <span className={styles.tag}>{t('nav.about')}</span>
 
                     <h2 className={styles.title}>
-                        Ձեր գաղափարը՝ մեր մասնագիտական առաքելությունն է։
+                        {t('about.title')}
                     </h2>
 
 
                     <p className={styles.desc}>
-                        Գեոդեզիա, նախագծում, կառուցապատում և համալիր շինարարական լուծումներ՝ ճշգրտությամբ, պատասխանատվությամբ և ժամանակակից մոտեցմամբ։
+                        {t('about.description')}
                     </p>
                     <a
                         href="#contact"
                         className={styles.btn}
                     >
-                        Կապ հաստատել
+                        {t('actions.contact')}
                     </a>
                 </div>
 
@@ -28,7 +30,7 @@ export const AboutUs = () => {
                         <img
                             src="/Images/Naxagic.jpeg"
                             loading="lazy" decoding="async"
-                            alt="Ճարտարապետական նախագծում"
+                            alt={t('about.imageAlt')}
                         />
                     </div>
                 </div>

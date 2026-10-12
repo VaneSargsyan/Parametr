@@ -1,4 +1,5 @@
 import './MainLayout.css';
+import { usePageMetadata } from '../hooks/usePageMetadata';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Footer } from '../components/Footer/Footer';
@@ -11,6 +12,7 @@ import { AboutUs } from '../components/AboutUs/AboutUs';
 import { Contact } from '../components/Contact';
 
 export const MainLayout = () => {
+    usePageMetadata();
     const { hash, key } = useLocation();
     useEffect(() => {
         if (!hash) return;
