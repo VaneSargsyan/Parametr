@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projects } from '../../data/projects';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer/Footer';
 import styles from './ProjectDetails.module.css';
 
 const BackLink = () => (
@@ -30,10 +32,11 @@ export default function ProjectDetails() {
     }
 
     return (
+        <>
         <main lang="hy" className={styles.page}>
             <header className={styles.hero}>
                 <nav className={styles.navigation} aria-label="Նախագծի նավարկում">
-                    <Link className={styles.brand} to="/">Պարամետր</Link>
+                    <Header />
                     <BackLink />
                 </nav>
                 <div className={styles.intro}>
@@ -82,8 +85,14 @@ export default function ProjectDetails() {
                         </div>
                     </section>
                 )}
-                <footer className={styles.footer}><BackLink /></footer>
+                <div className={styles.footer}>
+                    <div><p className={styles.eyebrow}>Ձեր հաջորդ քայլը</p><h2>Քննարկենք ձեր նախագիծը</h2></div>
+                    <Link className={styles.requestLink} to="/#contact">Ներկայացնել հայտ <span aria-hidden="true">↗</span></Link>
+                    <BackLink />
+                </div>
             </div>
         </main>
+        <Footer />
+        </>
     );
 }

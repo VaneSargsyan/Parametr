@@ -1,76 +1,31 @@
-
-import { Link } from 'react-scroll'
-import styles from './Navbar.module.css'
-import { useState } from 'react';
-
-
+import { useRef, useState } from 'react';
+import { Header } from '../Header';
+import styles from './Navbar.module.css';
+const links = [['main', 'Գլխավոր'], ['services', 'Ծառայություններ'], ['projects', 'Նախագծեր'], ['about', 'Մեր մասին'], ['contact', 'Կապ մեզ հետ']];
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
-
-    const closeMenu = () => setOpen(false);
+    const toggleRef = useRef(null);
     return (
-        <>
-            <nav className={styles["nav"]}>
-                <div className={styles["navbar"]}>
-                  
-                    <div className={styles.burger} onClick={() => setOpen(!open)}>
-                        {open ? "✕" : "☰"}
-                    </div>
-                 
-                    <ul className={`${styles["nav-el"]} ${open ? styles.open : ""}`}>
-                       
-                        <li className={styles['nav-list']}>
-                            <Link to="main" spy={true}
-                                smooth={true}
-                                duration={1200}
-                                spy={true}
-                                offset={-80}
-                                onClick={closeMenu}
-                            >Գլխավոր</Link>
-                        </li>
-
-                        <li className={styles['nav-list']}>
-                            <Link to="services" spy={true}
-                                smooth={true}
-                                duration={1200}
-                                spy={true}
-                                offset={-80}
-                                onClick={closeMenu}
-                            >Ծառայություններ</Link>
-                        </li>
-
-                        <li className={styles['nav-list']}>
-                            <Link to="projects" spy={true}
-                                smooth={true}
-                                duration={1200}
-                                spy={true}
-                                offset={-80}
-                                onClick={closeMenu}
-                            >Նախագծեր</Link>
-                        </li>
-
-                        <li className={styles['nav-list']}>
-                            <Link to="about" spy={true}
-                                smooth={true}
-                                duration={1200}
-                                spy={true}
-                                offset={-80}
-                                onClick={closeMenu}
-                            >Մեր մասին</Link>
-                        </li>
-
-                        <li className={styles['nav-list']}>
-                            <Link to="contact" spy={true}
-                                smooth={true}
-                                duration={1200}
-                                spy={true}
-                                offset={-80}
-                                onClick={closeMenu}
-                            >Կոնտակտ</Link>
-                        </li>
+        <header className={styles.header}>
+            <a className="skip-link" href="#main">Անցնել բովանդակությանը</a>
+            <div className={styles.inner}>
+                <Header />
+                <nav aria-label="Գլխավոր" onKeyDown={(event) => {
+                    if (event.key === 'Escape' && open) {
+                        setOpen(false);
+                        toggleRef.current?.focus();
+                    }
+                }}>
+                    <button ref={toggleRef} className={styles.burger} type="button"
+                        aria-label={open ? 'Փակել ընտրացանկը' : 'Բացել ընտրացանկը'}
+                        aria-expanded={open} aria-controls="primary-navigation"
+                        onClick={() => setOpen(value => !value)}>{open ? '✕' : '☰'}</button>
+                    <ul id="primary-navigation" className={`${styles.links} ${open ? styles.open : ''}`}>
+                        {links.map(([id, label]) => <li key={id}><a href={`#${id}`} onClick={() => setOpen(false)}>{label}</a></li>)}
                     </ul>
-                </div>
-            </nav>
-        </>
-    )
-}
+                </nav>
+                <a className={styles.cta} href="#contact">Ներկայացնել հայտ <span aria-hidden="true">↗</span></a>
+            </div>
+        </header>
+    );
+};

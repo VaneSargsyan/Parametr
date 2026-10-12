@@ -19,14 +19,14 @@ export const Steps = () => {
             icon: <RulerIcon />,
             number: '02',
             title: 'Չափագրում',
-            description: 'Գեոդեզիական և ճարտ. չափագրումներ, հողի կամ շինության ճշգրիտ հանույթ:'
+            description: 'Գեոդեզիական և ճարտարապետական չափագրումներ, հողամասի կամ շինության ճշգրիտ հանույթ։'
         },
         {
             id: 3,
             icon: <PencilIcon />,
             number: '03',
             title: 'Նախագծում',
-            description: 'Ճարտ. և ճարտ. ծրագրերի մշակում, կոմունիկացիոն և կոնստրուկտիվ լուծումներ:'
+            description: 'Ճարտարապետական և ինժեներական նախագծերի մշակում, հաղորդակցուղիների և կառուցվածքային լուծումների նախագծում։'
         },
         {
             id: 4,
@@ -47,29 +47,28 @@ export const Steps = () => {
             icon: <FinishIcon />,
             number: '06',
             title: 'Հանձնում',
-            description: 'Հանձնում, փաստ. փաթեթ, երաշխիքային պայմաններ:'
+            description: 'Աշխատանքների հանձնում, փաստաթղթերի փաթեթ և երաշխիքային պայմաններ։'
         },
     ]
-    console.log(ApplyIcon)
     return (
-        <div className={styles["steps"]}>
+        <section className={styles["steps"]} aria-labelledby="process-title">
             <div className={styles["steps-header"]}>
-                <h3 className={styles['steps-title']}>Աշխատանքի Ընթացք</h3>
-                <h2 className={styles["steps-subtitle"]}>Ինչպես ենք մենք աշխատում</h2>
+                <p className={styles['steps-title']}>Աշխատանքի ընթացք</p>
+                <h2 id="process-title" className={styles["steps-subtitle"]}>Ինչպես ենք մենք աշխատում</h2>
                 <p className={styles['steps-text']}>6 հստակ փուլ՝ ձեր նախագծի ամբողջական իրականացման համար:</p>
             </div>
-            <div className={styles["steps-main"]}>
+            <ol className={styles["steps-main"]}>
                 {Steps.map((item) => (
-                    <div className={styles['step-item']} key={item.id}>
+                    <li className={styles['step-item']} key={item.id}>
                         <div className={styles["step-header"]}>
-                            <span className={styles['icon']}>{item.icon}</span>
+                            <span aria-hidden="true" className={styles['icon']}>{item.icon}</span>
                             <p className={styles['number']}>{item.number}</p>
                         </div>
                         <h3 className={styles['step-title']}>{item.title}</h3>
                         <p className={styles['step-desc']}>{item.description}</p>
-                    </div>
+                    </li>
                 ))}
-            </div>
-        </div>
+            </ol>
+        </section>
     )
 }

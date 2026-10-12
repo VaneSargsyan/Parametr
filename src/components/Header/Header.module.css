@@ -1,38 +1,4 @@
-.header{
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-self: space-between; */
-    
-}
-.header-top{
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-/* .logo{
-    border: 1px solid oklch(0.92 0.01 250);
-    background: var(--blue-gradient);
-    border-radius: var(--corner-radius);
-    padding:0.875rem;
-    align-items: center;
-    color: var(--white-primary);
-} */
-.logo {
-    height: 65px;
-    width: auto;
-    object-fit: contain;
-    background-color: transparent;
-    display: block;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-.header-title{
-    font-size: 1.875rem;
-    color: var(--white-primary);
-    font-family: "Barlow Condensed", sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing:2px;
-}
+.brand { display: inline-flex; align-items: center; gap: .8rem; color: white; font-family: var(--main-font); font-size: 1.15rem; font-weight: 700; letter-spacing: .07em; flex-shrink: 0; }
+.mark { width: 39px; height: 39px; color: var(--blue-light); }
+.caption { display: block; font-size: .56rem; letter-spacing: 0; font-weight: 400; color: #b3c2d4; margin-top: .15rem; }
+@media(max-width: 400px) { .brand { font-size: .95rem; gap: .5rem; } .mark { width: 30px; } }

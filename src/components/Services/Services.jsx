@@ -24,35 +24,47 @@ export const Services = () => {
             </div>
 
             <div className={styles.cards}>
-                <div className={styles.card}>
-                    <h3>📐 Գեոդեզիա և չափագրում</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 20 12 4l8 16H4Zm8-16v16M7 14h10" /></svg>
+                    <h3>Գեոդեզիա և չափագրում</h3>
                     <p>Ճշգրիտ չափագրումներ և հողատարածքների ուսումնասիրություն։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
 
-                <div className={styles.card}>
-                    <h3>🏗️ Կառուցապատում</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 21V6h16v15M8 10h2m4 0h2M8 14h2m4 0h2M10 21v-3h4v3" /></svg>
+                    <h3>Կառուցապատում</h3>
                     <p>Բնակելի և կոմերցիոն նախագծերի իրականացում։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
 
-                <div className={styles.card}>
-                    <h3>📋 Նախագծում</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 20h16M6 17 17 6l3 3L9 20H6v-3Zm9-9 3 3" /></svg>
+                    <h3>Նախագծում</h3>
                     <p>Ճարտարապետական և ինժեներական նախագծեր։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
 
-                <div className={styles.card}>
-                    <h3>🛋️ Կահույք</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M3 10v8h18v-8M3 14h18M5 18v3m14-3v3" /></svg>
+                    <h3>Կահույք</h3>
                     <p>Անհատական նախագծմամբ կահույքի արտադրություն։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
 
-                <div className={styles.card}>
-                    <h3>🚪 Դռներ և պատուհաններ</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 3h18v18H3V3Zm9 0v18M3 12h18" /></svg>
+                    <h3>Դռներ և պատուհաններ</h3>
                     <p>Մետաղապլաստե և միջսենյակային լուծումներ։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
 
-                <div className={styles.card}>
-                    <h3>🏠 Անշարժ գույք</h3>
+                <article className={styles.card}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8M5 10v11h14V10M10 21v-7h4v7" /></svg>
+                    <h3>Անշարժ գույք</h3>
                     <p>Գնահատում, խորհրդատվություն և գույքային ծառայություններ։</p>
-                </div>
+                    <a href="#contact">Մանրամասների համար կապ հաստատել <span aria-hidden="true">↗</span></a>
+                </article>
             </div>
             
         </section>

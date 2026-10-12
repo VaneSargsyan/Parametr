@@ -1,16 +1,53 @@
-# React + Vite
+# Parametr
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Existing Armenian construction and engineering website built with React, Vite,
+React Router and CSS Modules. Preserve approved company copy and imagery.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use a Node.js version supported by Vite 8 (Node 20.19+ or 22.12+) and pnpm.
 
-## React Compiler
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Checks and production build
 
-## Expanding the ESLint configuration
+```sh
+pnpm lint
+pnpm build
+pnpm preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The build writes `dist/`. Preview serves the build locally, not as a production server.
+There is currently no automated test suite or test script.
+
+## Existing functionality
+
+- Armenian homepage with services, workflow, projects, company and contact sections.
+- Project category filtering and `/projects/:slug` detail pages with galleries.
+- Telephone and email contact links.
+
+The contact form is not connected to a backend. Submitting it does not send or
+store data; it displays a message directing customers to the existing contact links.
+Supabase, staff authentication, multilingual support and transactional email are
+planned and are not implemented.
+
+## Environment and deployment
+
+No environment variables are currently required. Local `.env` files are ignored;
+only sanitized example files may be committed. Vite exposes `VITE_` variables in
+the browser bundle: never place private keys or customer data in them.
+
+Vercel routing is configured in `vercel.json` for existing project detail URLs.
+Other hosts must serve `index.html` for those routes on direct navigation/refresh.
+Verify homepage anchors, mobile keyboard navigation, all category filters, project
+pages, gallery links and unknown project slugs before deploying.
+
+## Phase 1 baseline
+
+The clean starting checkpoint is `00e324a` (`Add project detail pages`). Phase 1
+preserves content and styling while improving lifecycle cleanup, accessibility,
+form semantics and local configuration. Business claims and project authenticity
+still require company review before production launch.

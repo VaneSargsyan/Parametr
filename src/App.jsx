@@ -7,17 +7,30 @@ import Lenis from 'lenis';
 
 function App() {
    useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-    });
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let lenis;
+    let frame;
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    function updateMotion() {
+      cancelAnimationFrame(frame);
+      lenis?.destroy();
+      lenis = undefined;
+      if (motion.matches) return;
+      lenis = new Lenis({ duration: 1.2 });
+      function raf(time) {
+        lenis.raf(time);
+        frame = requestAnimationFrame(raf);
+      }
+      frame = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    updateMotion();
+    motion.addEventListener('change', updateMotion);
+    return () => {
+      motion.removeEventListener('change', updateMotion);
+      cancelAnimationFrame(frame);
+      lenis?.destroy();
+    };
   },[])
 
   return (

@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import styles from './Contact.module.css'
 import ContactIcon from '../../assets/Icons/Contact.svg?react'
 import LocationIcon from '../../assets/Icons/Location.svg?react'
 import PhoneIcon from '../../assets/Icons/Phone.svg?react'
 import MailIcon from '../../assets/Icons/Mail.svg?react'
 export const Contact = () => {
+    const [attempted, setAttempted] = useState(false);
     return (
         <section id='contact' className={styles['contact-section']}>
             <div className={styles["contact"]}>
@@ -53,35 +55,46 @@ export const Contact = () => {
 
 
                 <div className={styles["right-side"]}>
-                    <h2>Ուղարկեք հարցում</h2>
+                    <h2>Ներկայացնել հայտ</h2>
+                    <p className={styles.notice} id="form-notice">Առցանց հայտերի ընդունումը դեռ հասանելի չէ։ Կապ հաստատելու համար զանգահարեք կամ գրեք մեզ։</p>
 
-                    <form>
+                    <form aria-describedby="form-notice" onSubmit={(event) => {
+                        event.preventDefault();
+                        setAttempted(true);
+                    }}>
+                        <label htmlFor="contact-name">Անուն</label>
                         <input
+                            id="contact-name" name="fullName" autoComplete="name"
                             type="text"
                             placeholder="Անուն"
                             required
                         />
 
+                        <label htmlFor="contact-phone">Հեռախոս</label>
                         <input
+                            id="contact-phone" name="phone" autoComplete="tel"
                             type="tel"
                             placeholder="Հեռախոս"
-                            pattern="[0-9]{9}"
                             required
                         />
 
+                        <label htmlFor="contact-email">Էլեկտրոնային փոստ (ոչ պարտադիր)</label>
                         <input
+                            id="contact-email" name="email" autoComplete="email"
                             type="email"
-                            placeholder="Email"
-                            required
+                            placeholder=""
                         />
 
+                        <label htmlFor="contact-message">Ձեր հաղորդագրությունը</label>
                         <textarea
+                            id="contact-message" name="message"
                             placeholder="Ձեր հաղորդագրությունը">
                         </textarea>
 
                         <button type="submit">
-                            Ստանալ խորհրդատվություն
+                            Ներկայացնել հայտ <span aria-hidden="true">↗</span>
                         </button>
+                        <p role="status" hidden={!attempted}>{attempted && 'Հարցումը չի ուղարկվել։ Խնդրում ենք կապ հաստատել նշված հեռախոսահամարով կամ էլեկտրոնային փոստով։'}</p>
                     </form>
                 </div>
 

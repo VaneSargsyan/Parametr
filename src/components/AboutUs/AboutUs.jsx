@@ -1,5 +1,4 @@
 import styles from './AboutUs.module.css'
-import { Link } from 'react-scroll'
 export const AboutUs = () => {
     return (
 
@@ -16,38 +15,20 @@ export const AboutUs = () => {
                     <p className={styles.desc}>
                         Գեոդեզիա, նախագծում, կառուցապատում և համալիր շինարարական լուծումներ՝ ճշգրտությամբ, պատասխանատվությամբ և ժամանակակից մոտեցմամբ։
                     </p>
-                    <div className={styles.stats}>
-                        <div className={styles.stat}>
-                            <h3>50+</h3>
-                            <p>Ավարտված նախագծեր</p>
-                        </div>
-
-                        <div className={styles.stat}>
-                            <h3>5+</h3>
-                            <p>Տարվա փորձ</p>
-                        </div>
-
-                        <div className={styles.stat}>
-                            <h3>100%</h3>
-                            <p>Ճշգրտություն</p>
-                        </div>
-                    </div>
-
-                    <Link
-                        to="contact"
-                        smooth={true}
-                        duration={1200}
+                    <a
+                        href="#contact"
                         className={styles.btn}
                     >
                         Կապ հաստատել
-                    </Link>
+                    </a>
                 </div>
 
                 <div className={styles.imageSide}>
                     <div className={styles.imageBox}>
                         <img
-                            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                            alt="construction"
+                            src="/Images/Naxagic.jpeg"
+                            loading="lazy" decoding="async"
+                            alt="Ճարտարապետական նախագծում"
                         />
                     </div>
                 </div>

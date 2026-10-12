@@ -22,13 +22,15 @@ export const Projects = () => {
     return (
         <section id='projects' className={styles['projects-section']}>
             <div className={styles["projects-header"]}>
-                <h1 className={styles['projects-title']}>Մեր նախագծերը</h1>
-                <h4 className={styles['projects-desc']}>Յուրաքանչյուր նախագիծ արտացոլում է մեր փորձը, ճշգրտությունն ու պատասխանատվությունը։</h4>
+                <h2 className={styles['projects-title']}>Մեր նախագծերը</h2>
+                <p className={styles['projects-desc']}>Յուրաքանչյուր նախագիծ արտացոլում է մեր փորձը, ճշգրտությունն ու պատասխանատվությունը։</p>
             </div>
 
         <div className={styles.filters}>
         {categories.map((item) => (
           <button
+            type="button"
+            aria-pressed={active === item}
             key={item}
             className={`${styles.filterBtn} ${
               active === item ? styles.active : ""
@@ -40,17 +42,16 @@ export const Projects = () => {
         ))}
       </div>
 
-      <div className={styles.grid}>
+      <div className={styles.grid} key={active}>
         {filtered.map((project, index) => (
           <Link
+            viewTransition={!window.matchMedia('(prefers-reduced-motion: reduce)').matches}
             to={`/projects/${project.slug}`}
             className={styles.card}
             key={project.id}
-            style={{
-              animationDelay: `${index * 120}ms`,
-            }}
+            style={{ animationDelay: `${index * 80}ms` }}
           >
-            <img src={project.image} alt={project.title} />
+            <div className={styles.media}><img loading="lazy" decoding="async" src={project.image} alt={project.title} /></div>
 
             <div className={styles.overlay}>
               <span>{project.category}</span>

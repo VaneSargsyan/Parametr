@@ -1,145 +1,16 @@
-.services {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 6rem;
-    min-height: 80vh;
-    background-color: hsl(var(--background));
-    position: relative;
-    overflow: hidden;
-}
-
-.services::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(rgba(37, 99, 235, 0.08),
-            transparent);
-}
-
-.service-header {
-    font-family: Noto Serif Armenian, Inter, serif;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-}
-
-.tag {
-    font-family: Noto Serif Armenian, Inter, serif;
-    color: rgb(36 99 235);
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: .875rem;
-    line-height: 1.25rem;
-
-}
-
-.service-header::before {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 3px;
-    background: rgb(36 99 235);
-    border-radius: 2px;
-    margin-bottom: 16px;
-}
-
-.title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-    font-family: Noto Serif Armenian, Inter, serif;
-    font-weight: 700;
-    max-width: 800px;
-    color: rgb(13 22 43);
-}
-
-.description {
-    max-width: 700px;
-    color: rgba(13, 22, 43, .7);
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.card {
-    padding: 30px;
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-
-}
-
-@media (max-width: 768px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(90deg, rgb(36 99 235), rgb(147, 197, 253));
-}
-
-.card h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.card:hover::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(36, 99, 235, 0.12), transparent 60%);
-}
-
-.card p {
-    color: rgba(13, 22, 43, 0.65);
-    line-height: 1.6;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 1.5rem;
-}
-
-.features span {
-    padding: 10px 18px;
-    border-radius: 999px;
-
-    background: rgba(37, 99, 235, .08);
-    border: 1px solid rgba(37, 99, 235, .15);
-
-    color: rgb(37, 99, 235);
-    font-size: .95rem;
-    font-weight: 600;
-}
+.services { max-width: var(--page-width); margin: auto; padding: var(--section-space) var(--gutter); }
+.service-header { display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 4rem; margin-bottom: 3rem; }
+.tag { grid-column: 1 / -1; color: var(--blue-primary); font-size: .72rem; margin-bottom: 1.2rem; }
+.title { font-size: clamp(1.75rem, 3vw, 2.65rem); line-height: 1.5; font-weight: 600; max-width: 650px; }
+.features { display: grid; gap: .6rem; align-content: center; font-size: .73rem; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); counter-reset: service; }
+.card { position: relative; background: white; padding: 2rem; min-width: 0; transition: background .25s; counter-increment: service; display: flex; flex-direction: column; }
+.card::before { content: '0' counter(service) ' /'; font: .75rem sans-serif; color: var(--blue-primary); margin-bottom: 2rem; }
+.serviceIcon { position: absolute; top: 1.7rem; right: 1.7rem; width: 30px; height: 30px; color: #526f91; }
+.card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .9rem; }
+.card p { color: var(--muted); font-size: .85rem; line-height: 1.9; margin-bottom: 1.8rem; }
+.card a { font-size: .65rem; display: flex; justify-content: space-between; gap: 1rem; padding-top: 1rem; margin-top: auto; border-top: 1px solid var(--line); }
+.card a span { color: var(--blue-primary); }
+.card:hover { background: #edf3fb; }
+@media(max-width: 1000px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .service-header { gap: 1rem; } }
+@media(max-width: 620px) { .cards, .service-header { grid-template-columns: 1fr; } .card { padding: 1.5rem; } .features { margin-top: .8rem; } }
