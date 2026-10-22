@@ -1,0 +1,10 @@
+project_id = "parametr"
+
+[functions.project-media]
+# The handler verifies the bearer token with Auth and current database membership.
+# This supports modern publishable keys/asymmetric user JWTs without legacy gateway validation.
+verify_jwt = false
+
+[functions.submit-inquiry]
+# Intentionally anonymous endpoint; server CAPTCHA + durable quotas, no user registration.
+verify_jwt = false

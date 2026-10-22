@@ -28,3 +28,5 @@ const records = [
 ];
 
 export const services = records.map(service => ({ ...service, ...contentFields('services', service.id, ['title', 'description']) }));
+
+export const serviceIcons = Object.fromEntries(records.map(service=>[service.id,service.iconPath]));

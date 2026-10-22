@@ -1,0 +1,13 @@
+.filters { display:flex; flex-wrap:wrap; align-items:end; gap:.7rem; margin:1rem 0; }
+.filters label,.details label { display:grid; gap:.4rem; font-size:.85rem; }
+.filters input,.filters select,.details select { border:1px solid var(--line); padding:.6rem; background:white; max-width:100%; }
+.filters button,.details button,.table button { background:var(--navy); color:white; padding:.65rem; font-size:.8rem; }
+.filters button:disabled { opacity:.5; }
+.table { overflow-x:auto; }
+.table table { width:100%; border-collapse:collapse; text-align:left; font-size:.8rem; }
+.table th,.table td { padding:.7rem; border-bottom:1px solid var(--line); }
+.details { border:1px solid var(--line); padding:1rem; margin-top:1rem; overflow-wrap:anywhere; }
+.details h2 { margin-bottom:1rem; }
+.details dl div { margin:.8rem 0; }
+.details dt { font-weight:600; font-size:.8rem; }
+.details dd { white-space:pre-wrap; margin-top:.3rem; }

@@ -5,7 +5,7 @@ import { usePageMetadata } from '../../hooks/usePageMetadata';
 import { LanguageSwitcher } from '../../components/LanguageSwitcher/LanguageSwitcher';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { projects } from '../../data/projects';
+import { usePublicProjects } from '../../features/projects/usePublicProjects';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer/Footer';
 import styles from './ProjectDetails.module.css';
@@ -19,11 +19,12 @@ const BackLink = () => {
 
 export default function ProjectDetails() {
     const { t, i18n } = useTranslation();
+    const { projects, loading, error, retry } = usePublicProjects();
     const { slug } = useParams();
     const project = projects.find((item) => item.slug === slug);
 
-    const title = project ? localized(project.title, i18n.resolvedLanguage) : t('project.notFound');
-    const description = project ? localized(project.description, i18n.resolvedLanguage) : t('project.notFoundDescription');
+    const title = project ? localized(project.title, i18n.resolvedLanguage) : t(loading || error ? 'projects.title' : 'project.notFound');
+    const description = project ? localized(project.description, i18n.resolvedLanguage) : t(loading || error ? 'seo.description' : 'project.notFoundDescription');
     const category = localized(categories.find(item => item.id === project?.categoryId)?.title, i18n.resolvedLanguage);
     usePageMetadata(`${title} | ${t('brand.name')}`, description);
 
@@ -31,6 +32,10 @@ export default function ProjectDetails() {
         window.scrollTo({ top: 0, behavior: 'instant' });
     }, [slug]);
 
+    if (loading || error) return <main className={`${styles.page} ${styles.empty}`}>
+        <LanguageSwitcher tone="light" /><p role={error ? 'alert' : 'status'}>{t(error ? 'pm.publicError' : 'pm.loading')}</p>
+        {error && <button type="button" onClick={retry}>{t('admin.retry')}</button>}<BackLink />
+    </main>;
     if (!project) {
         return (
             <main lang={i18n.resolvedLanguage} className={`${styles.page} ${styles.empty}`}>
@@ -66,10 +71,10 @@ export default function ProjectDetails() {
                         <p className={styles.eyebrow}>{t('project.approach')}</p>
                         <h2 id="about-project">{t('project.about')}</h2>
                     </div>
-                    <p>{localized(project.longDescription, i18n.resolvedLanguage)}</p>
+                    <p>{localized(project.location, i18n.resolvedLanguage) && <><span>{localized(project.location, i18n.resolvedLanguage)}</span><br /></>}{localized(project.longDescription, i18n.resolvedLanguage)}</p>
                 </section>
 
-                <section className={styles.section} aria-labelledby="project-features">
+                {localized(project.features, i18n.resolvedLanguage).length > 0 && <section className={styles.section} aria-labelledby="project-features">
                     <p className={styles.eyebrow}>{t('project.details')}</p>
                     <h2 id="project-features">{t('project.features')}</h2>
                     <ul className={styles.features}>
@@ -80,7 +85,7 @@ export default function ProjectDetails() {
                             </li>
                         ))}
                     </ul>
-                </section>
+                </section>}
 
                 {project.gallery?.length > 0 && (
                     <section className={styles.section} aria-labelledby="project-gallery">

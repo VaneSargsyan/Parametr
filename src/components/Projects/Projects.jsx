@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { categories } from '../../data/categories';
 import { localized } from '../../i18n/content';
-import { projects } from '../../data/projects';
+import { usePublicProjects } from '../../features/projects/usePublicProjects';
 import styles from './Projects.module.css'
 
 export const Projects = () => {
     const { t, i18n } = useTranslation();
+    const { projects, loading, error, retry } = usePublicProjects();
     const [active, setActive] = useState('all');
     const filtered =
         active === 'all'
@@ -38,7 +39,9 @@ export const Projects = () => {
       </div>
 
       <div className={styles.grid} key={active}>
-        {filtered.length === 0 && <p role="status">{t('projects.empty')}</p>}
+        {loading && <p role="status">{t('pm.loading')}</p>}
+        {error && <div role="alert"><p>{t('pm.publicError')}</p><button type="button" onClick={retry}>{t('admin.retry')}</button></div>}
+        {!loading && !error && filtered.length === 0 && <p role="status">{t('projects.empty')}</p>}
         {filtered.map((project, index) => (
           <Link
             viewTransition={!window.matchMedia('(prefers-reduced-motion: reduce)').matches}

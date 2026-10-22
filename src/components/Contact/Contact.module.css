@@ -24,3 +24,8 @@
 @media(max-width: 760px) { .contact { grid-template-columns: 1fr; } }
 
 .fieldError { color: #9c2525; font-size: .72rem; margin: -.6rem 0 1rem; }
+
+.right-side select { width:100%; border:1px solid #cbd3dd; padding:.8rem; margin-bottom:1.1rem; background:#fcfcfb; color:var(--ink); }
+.right-side .consent { display:flex; align-items:flex-start; gap:.6rem; line-height:1.6; }
+.right-side .consent input { width:auto; margin-top:.3rem; flex-shrink:0; }
+.right-side button:disabled { opacity:.6; cursor:wait; }

@@ -88,7 +88,7 @@ assert.deepEqual(validateContact({ fullName: 'Test', phone: '+374 55 10 60 70', 
 assert.equal(validateContact({ fullName: 'Test', phone: '055106070', email: 'invalid' }).email, 'form.invalidEmail');
 
 // Vite transforms the actual JSX and CSS modules; no extra testing dependency is needed.
-const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom', define: { 'import.meta.env.VITE_PROJECTS_SOURCE': '"local"', 'import.meta.env.VITE_SUPABASE_URL': '""', 'import.meta.env.VITE_SUPABASE_ANON_KEY': '""', 'import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY': '""' } });
 try {
     const { default: i18n } = await server.ssrLoadModule('/src/i18n/index.js');
     const { MainLayout } = await server.ssrLoadModule('/src/Layouts/MainLayout.jsx');
